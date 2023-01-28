@@ -5,13 +5,13 @@ set -x
 
 RAD_ERRORS=$(radon cc src -nc | wc -l)
 
-if [[ $RAD_ERRORS -nb 0 ]]
+if [[ $RAD_ERRORS -ne 0 ]]
 then
     echo 'Ha fallado el análisis estatico de RADON - CC'
     exit 1
 fi
 RAD_ERRORS=$(radon mi src -nc | wc -l)
-if [[ $RAD_ERRORS -nb 0 ]]
+if [[ $RAD_ERRORS -ne 0 ]]
 then
     echo 'Ha fallado el análisis estatico de RADON - MI'
     exit 1

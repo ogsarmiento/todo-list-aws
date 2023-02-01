@@ -24,7 +24,8 @@ Globals:
       Variables:
         DYNAMODB_TABLE: !Ref TodosDynamoDbTable
         ENDPOINT_OVERRIDE: ""
-    
+        REGION: us-east-1
+
 Resources:
   
   CreateTodoFunction:

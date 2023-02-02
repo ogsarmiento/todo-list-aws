@@ -93,7 +93,7 @@ Resources:
           Properties:
             Path: /todos/{id}
             Method: delete
-   TranslateTodoFunction:
+  TranslateTodoFunction:
     Type: AWS::Serverless::Function 
     Properties:
       CodeUri: src/

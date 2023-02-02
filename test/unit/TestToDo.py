@@ -119,7 +119,20 @@ class TestDatabaseFunctions(unittest.TestCase):
         self.assertTrue(result[0]['text'] == self.text)
         print ('End: test_list_todo')
 
-
+    def test_translate_todo(self):
+        print ('---------------------')
+        print ('Start: test_translate_todo')
+        self.table = os.environ['DYNAMODB_TABLE']
+        from src.todoList import translate_item
+        # Testing file functions
+        translation = translate_item(self.text, "en", self.dynamodb)
+        print ('Response translate en:' + str(translation))
+        self.assertEqual("Learn DevOps and Cloud at UNIR", translation)
+        translation = translate_item(self.text, "fr", self.dynamodb)
+        print ('Response translate fr:' + str(translation))
+        self.assertEqual("Apprenez DevOps et Cloud à l'UNIR", translation)
+        print ('End: test_traslate_todo')
+        
     def test_update_todo(self):
         print ('---------------------')
         print ('Start: test_update_todo')

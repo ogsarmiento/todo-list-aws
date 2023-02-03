@@ -3,12 +3,12 @@
 import warnings
 import unittest
 import boto3
-from moto import mock_dynamodb2
+from moto import mock_dynamodb
 import sys
 import os
 import json
 
-@mock_dynamodb2
+@mock_dynamodb
 class TestDatabaseFunctions(unittest.TestCase):
     def setUp(self):
         print ('---------------------')
@@ -74,7 +74,7 @@ class TestDatabaseFunctions(unittest.TestCase):
         #                 'ResponseMetadata']['HTTPStatusCode'])
         print ('End: test_put_todo')
 
-    @mock_dynamodb2
+    @mock_dynamodb
     def test_put_todo_error(self):
         print ('---------------------')
         print ('Start: test_put_todo_error')
@@ -160,7 +160,7 @@ class TestDatabaseFunctions(unittest.TestCase):
         print ('End: test_update_todo')
 
 
-    @mock_dynamodb2
+    @mock_dynamodb
     def test_update_todo_error(self):
         print ('---------------------')
         print ('Start: atest_update_todo_error')
@@ -215,7 +215,7 @@ class TestDatabaseFunctions(unittest.TestCase):
         self.assertTrue(len(get_items(self.dynamodb)) == 0)
         print ('End: test_delete_todo')
 
-    @mock_dynamodb2
+    @mock_dynamodb
     def test_delete_todo_error(self):
         print ('---------------------')
         print ('Start: test_delete_todo_error')
@@ -228,7 +228,7 @@ class TestDatabaseFunctions(unittest.TestCase):
         self.assertRaises(TypeError, delete_item("", self.dynamodb))
         print ('End: test_delete_todo_error')
         
-    @mock_dynamodb2
+    @mock_dynamodb
     def test_get_todo_error(self):
         print ('---------------------')
         print ('Start: test_get_todo_error')

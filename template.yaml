@@ -105,7 +105,8 @@ Resources:
           Type: Api
           Properties:
             Path: /todos/{id}/{language}
-            Method: get           
+            Method: get 
+            
   TodosDynamoDbTable:
     Type: AWS::DynamoDB::Table
     Properties: 
